@@ -1,0 +1,13 @@
+[Unit]
+Description="Local DVR Service"
+Requires=networking.service 
+After=networking.service 
+
+[Service]
+User=cam
+WorkingDirectory=/home/cam
+ExecStart=/home/cam/dvr.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
